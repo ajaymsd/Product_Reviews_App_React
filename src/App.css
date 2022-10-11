@@ -1,38 +1,82 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
+*{
+  text-transform: capitalize;
+
+}
+body{
+  background-color :#251B37;
+}
+.product-list{
+  
+  margin-left: 19.5%;
+
+  
+}
+
+.product{
+  width:800px;
+  
+ 
+  background-color: #EEE309;
+  color: #251B37;
+  
+
+}
+.product img {
+  width:800px;
+  height:400px;
+  padding:0;
+}
+.product .content{
+  margin-left:3%;
+  font-size:18px;
+  font-family:'Roboto Condensed', sans-serif ;
+ 
+}
+.product .content p{
+  line-height: 40px;
+}
+.flex-con{
+  display:flex;
+  justify-content: space-between;
+  font-family: 'Quicksand', sans-serif;
+  
+}
+.price{
+  margin-right: 3%;
+}
+h2{
   text-align: center;
+  margin-top: 2%;
+  font-size: 40px;
+  color:#FDFF00;
+  font-family: 'Quicksand', sans-serif;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+button{
+  background-color: #251B37;
+  color: #FDFF00;
+  text-align: center;
+  width:30%;
+  border-radius: 25px;
+  border:none;
+  padding:15px;
+  font-size: 17px;
+  margin-left:35%;
+  margin-bottom: 3%;
+  font-family: 'Quicksand', sans-serif;
+  transition:0.4s;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+button:hover{
+  background:transparent;
+  color:#251B37;
+  border: 1px solid #251B37;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.hea{
+  text-decoration: underline;
 }
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.price{
+  background-color: #251B37;
+  color: yellow;
+  padding:4px;
 }

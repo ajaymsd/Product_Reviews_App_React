@@ -1,24 +1,43 @@
-import logo from './logo.svg';
+import Loading from './Loading';
+import Products from './Products';
 import './App.css';
+import React from 'react';
 
+const url="https://course-api.com/react-store-products";
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  const [loading,setLoading]=React.useState(true);
+  const [product,setProducts]=React.useState([]);
+  const removeProduct=(id)=>{
+    const newProduct=product.filter((product)=>product.id !== id);
+    setProducts(newProduct)
+  }
+  const fetchData=async()=>{
+    setLoading(true);
+    try{
+    const response=await fetch(url);
+    const product=await response.json();
+    console.log(product);
+    setProducts(product);
+   
+    setLoading(false);
+    }catch(error){
+       setLoading(false);
+
+    }
+  };
+  React.useEffect(()=>{
+    fetchData();
+  },[]);
+
+  if(loading){
+    return(
+      <main>
+        <Loading/>
+      </main>
+    )
+  }
+  return ( 
+   <Products products={product} removeProduct={removeProduct}/>
   );
 }
 
